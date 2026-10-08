@@ -7,7 +7,6 @@ export function Footer() {
         <div className="mt-12 border-t pt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
           {/* Changed to flex-row, centered items, and wrapped text wrap settings */}
           <div className="flex flex-row items-center justify-center gap-4 flex-wrap text-center">
-            {/* insert Drawer of student information here */}
             <StudentInfo />
             <span className="text-sm text-muted-foreground whitespace-nowrap">
               &copy; {new Date().getFullYear()} CPE207 Corp. All rights
