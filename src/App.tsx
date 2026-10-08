@@ -1,8 +1,8 @@
 import { AddItemDialog } from "./components/AddItemDialog";
 import { ItemList } from "./components/ItemList";
 import { Footer } from "./components/Footer";
-import { OverviewCards } from "./components/OverviewCards";
-
+//import { OverviewCards } from "./components/OverviewCards";
+import { DashboardTabs } from "./components/DashboardTabs";
 export default function App() {
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
@@ -24,7 +24,7 @@ export default function App() {
 
           {/* Put OverviewCards and CategoryCards under DashboardTabs */}
           {/* And then use DashboardTabs here instead */}
-          <OverviewCards />
+          <DashboardTabs />
           <ItemList />
         </div>
       </main>

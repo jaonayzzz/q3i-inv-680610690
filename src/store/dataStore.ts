@@ -10,7 +10,7 @@ interface ItemState {
     price: number,
     category: InventoryItem["category"],
   ) => void;
-  // deleteInventoryItem: (id: string) => void;
+  deleteInventoryItem: (id: string) => void;
 }
 
 export const useItemStore = create<ItemState>()(
@@ -67,6 +67,14 @@ export const useItemStore = create<ItemState>()(
           date: "2026-10-04",
         },
       ],
+      deleteInventoryItem: (name: string) =>
+        set((state) => ({
+          inventory: state.inventory.map((item) =>
+            item.name === name && !item.name.includes("Deleted")
+              ? { ...item, name: item.name + " (Deleted)" }
+              : item
+          ),
+        })),
       addInventoryItem: (name, quantity, price, category) =>
         set((state) => ({
           inventory: [
@@ -82,10 +90,12 @@ export const useItemStore = create<ItemState>()(
           ],
         })),
 
+
+
     }),
     {
       // Unique key name for the localStorage entry
-      name: "app-storage",
+      name: "inv-680610690",
     },
   ),
 );
